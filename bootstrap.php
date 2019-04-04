@@ -43,7 +43,7 @@ function registration(){
 			$body='Здраствуйте, <br/> <br/> Нам необходимо убедиться, что вы действительно хотите зарегестрироваться на нашем сервисе. Для этого вам необходимо подтвердить аккаунт, перейдя по ссылке ниже:<br/> <br/> 
 			<a href="'.$base_url.'/activation.php?mailkey='.$mailkey.'">'.$base_url.'/activation.php?mailkey='.$mailkey.'</a>';
 			mail($to,$subject,$body,'Content-type: text/html; charset=utf-8\r\n');
-			
+
 			$vklogin = $_COOKIE['user'];
 			$query = "SELECT * FROM `signup` WHERE email = '$email'";
 			$data = mysqli_query($dbc, $query);
@@ -79,7 +79,9 @@ function registration(){
 			
 		}
 	}
+	return $info_reg;
 }
+
 
 function login(){
 	$dbc = mysqli_connect('localhost', 'root', 'qwerty', 'users');
@@ -173,7 +175,8 @@ function userdelete(){
 		$mail = $_COOKIE['email'];
 		$query ="DELETE FROM signup WHERE email = '$mail'";
 		$result = mysqli_query($dbc, $query);
-		header ('Location: exit.php');
+		logout();
+		header ('Location: index.php');
 		mysqli_close($dbc);
 		exit();
     }

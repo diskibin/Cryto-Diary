@@ -187,7 +187,7 @@ vk();
 						<div class="col-12"><input type="password" placeholder="Повторите пароль" class="kkk" name="confirmation" size="35"></div>
 					</div>
 					<div class="row justify-content-center">
-						<div class="col-12"><p><?php echo($info_reg)?></p></div>
+						<div class="col-12"><p><?php echo(registration())?></p></div>
 					</div>
 					<br>
 					<center><div class="row justify-content-center"><div class="col-12"><p><a id='vkreginfo'></a></p></div></div></center>
