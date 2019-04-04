@@ -11,31 +11,24 @@ function registration(){
 		$base_url='localhost';
 		if (empty($_POST['email'])) {
 			$info_reg = 'Вы не ввели почту';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (!preg_match("/^[a-zA-Z0-9_\.\-]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}$/", $email)) {
 			$info_reg = 'Неправильно введен адрес электронной почты';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (empty($password)) {
 			$info_reg = 'Вы не ввели пароль';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (iconv_strlen($password, 'utf-8') < 8){
 			$info_reg = 'Вы ввели слишком короткий пароль';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z!@#$%]{8,50}$/', $password)){
 			$info_reg = 'Пароль должен содержать хотя бы одну строчную и одну заглавную буквы';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (empty($confirmation)) {
 			$info_reg = 'Вы не ввели подтверждение пароля';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif ($password != $confirmation){
 			$info_reg = 'Подтверждение пароля не совпадает с паролем';
-			echo '<script>var test = 1;</script>';
 		}
 		elseif (!empty($_COOKIE['user'])) {
 			$to=$email;
@@ -48,7 +41,7 @@ function registration(){
 			$query = "SELECT * FROM `signup` WHERE email = '$email'";
 			$data = mysqli_query($dbc, $query);
 			if(mysqli_num_rows($data) == 0) {
-				$query ="INSERT INTO `signup` (email, password, mailkey, vk_uid) VALUES ('$email', SHA('$confirmation'), '$mailkey', '$vklogin')";
+				$query ="INSERT INTO `signup` (email, password, mailkey, ok, vk_uid) VALUES ('$email', SHA('$confirmation'), '$mailkey', '0', '$vklogin')";
 				mysqli_query($dbc, $query);
 				header ('Location: complete.html');
 				mysqli_close($dbc);
@@ -66,7 +59,7 @@ function registration(){
 			$query = "SELECT * FROM `signup` WHERE email = '$email'";
 			$data = mysqli_query($dbc, $query);
 			if(mysqli_num_rows($data) == 0) {
-				$query ="INSERT INTO `signup` (email, password, mailkey) VALUES ('$email', SHA('$confirmation'), '$mailkey')";
+				$query = "INSERT INTO `signup` (email, password, mailkey, ok, vk_uid) VALUES ('$email', SHA('$confirmation'), '$mailkey', '0', '0')";
 				mysqli_query($dbc, $query);
 				header ('Location: complete.html');
 				mysqli_close($dbc);
@@ -101,15 +94,14 @@ function login(){
 				}
 				else {
 					$info_login = 'Извините, вы должны ввести правильные имя пользователя и пароль';
-					echo '<script>var test = 2;</script>';
 				}
 			}
 			else {
 				$info_login = 'Извините вы должны заполнить поля правильно';
-				echo '<script>var test = 2;</script>';
 			}
 		}
 	}
+	return $info_login;
 }
 
 function vk(){
@@ -437,7 +429,7 @@ function logout(){
 		setcookie('user_id', '', -1, '/');
 		setcookie('email', '', -1, '/');
 		$home_url = 'http://' . $_SERVER['HTTP_HOST'];
-		header('Location: ' . $home_url);
+		header('Location: index.php');
 	}
 }
 

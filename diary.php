@@ -4,6 +4,7 @@ userdelete();
 createrec();
 deleterec();
 vkset();
+logout();
 ?>
 
 
@@ -118,14 +119,13 @@ vkset();
                     <p>Имеющиеся записи <?php if(empty($_COOKIE['email'])) {?> <?php } else { ?> пользователя <?php echo $_COOKIE['email']; ?> <?php } ?></p>
                     <?php if(empty($_COOKIE['email'])) {?> <?php } else { ?> 
                     <div class="row justify-content-center">
-                        <p><a href="exit.php" class="knopka">Выйти из аккаунта</a></p>
-                        <p><a href="passchange.php" class="knopka">Изменить пароль</a></p>
                         <form method="POST"action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <button name="logout" class="submit">Выйти из аккаунта</button>
+                        <button class="submit" formaction="passchange.php">Изменить пароль</button>
                         <button name="vkconnect" class="submit">Подключить ВК</button>
                         <button name="delete" class="submit">Удалить аккаунт</button>
                         </form>
                     </div>
-                    
                     <?php } ?>
 				</div>
 			</div>

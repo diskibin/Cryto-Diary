@@ -272,7 +272,7 @@ vk();
 					<div class="col-12"><input type="password" placeholder="Пароль" class="kkk" name="password1" size="35"></div>
 				</div>
 				<div class="row justify-content-center">
-					<div class="col-12"><p><?php echo($info_login)?></p></div>
+					<div class="col-12"><p><?php echo(login())?></p></div>
 				</div>
 				<br>
 				<div class="row justify-content-center">
