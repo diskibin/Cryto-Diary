@@ -1,0 +1,269 @@
+.col-12-2 .kkk {
+border: 0px;
+outline: none;
+border-radius: 3px;
+height: 40px;
+font-size: 21px;
+position: center;
+width: 50%;
+background: rgba(84, 151, 167, 0.1);
+}
+.col-12-2 .kkk:focus {
+border: 1px solid #B33131;
+}
+a.knopka {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: rgb(84,151,167,0.1);
+padding: 0.4em 0.8em;
+outline: none;
+border-radius: 6px;
+} 
+a.knopka:hover {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: rgba(167, 104, 84, 0.1);
+padding: 0.4em 0.8em;
+outline: none;
+border-radius: 6px;
+} 
+.col-12-2 a {
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-12-2 p {
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-12-2:hover a {
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #A76854;
+font-family: Amatic SC;
+}
+.col-12 { 
+padding: 0px 3px;
+color: #ffffff;
+text-align: center;
+}
+.col-12 p {
+padding: 10px 0px 0px 0px;
+font-size: 21px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+font-weight: regular;
+}
+.col-12 a p {
+padding: 10px 0px 0px 0px;
+font-size: 31px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+font-weight: regular;
+}
+.col-12-1 {
+margin: 20px -10px 0px 0px;
+}
+.col-12-1 p {
+font-weight: bold;
+font-size: 40px;
+line-height: 50px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-12-1 a p {
+font-weight: bold;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-6 {
+margin: 20px -10px 0px 0px;
+}
+.col-6 p {
+font-weight: bold;
+font-size: 40px;
+line-height: 50px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-6 a p {
+font-weight: bold;
+font-size: 25px;
+line-height: 35px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-7 {
+margin: 20px -10px 0px 0px;
+}
+.col-7 p {
+margin: -10px 0px 0px 0px;
+font-weight: bold;
+font-size: 25px;
+line-height: 0px;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-12:hover .d1  {
+display: none;
+}
+.d2 {
+margin-left:0px;
+display: none;
+}
+.d2 p {
+color: #A76854;
+}
+.col-12:hover .d2 {
+display: block;
+}
+.kkk {
+border: 0px;
+outline: none;
+border-radius: 3px;
+height: 40px;
+font-size: 14px;
+width: 90%;
+background: rgba(84, 151, 167, 0.1);
+}
+.kkk:focus {
+border: 1px solid #B33131;
+}
+input[type="text"]{
+font-weight: bold;
+font-size: 21px;
+line-height: 0px;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+input[type="password"]{
+font-weight: bold;
+font-size: 21px;
+line-height: 0px;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+a.knopka2 {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: #EB5757;
+padding: 0.4em 0.8em;
+outline: none;
+border-radius: 6px;
+} 
+a.knopka2:hover {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: rgb(255, 132, 132);
+padding: 0.4em 0.8em;
+outline: none;
+border-radius: 6px;
+} 
+.knopka3 {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: rgba(77, 164, 214, 0.5);
+padding: 0.5em 0.8em;
+outline: none;
+border-radius: 6px;
+border: 0; 
+width: 90%;
+display: inline-block;
+} 
+.knopka3:hover {
+color: #fff;
+text-decoration: none;
+user-select: none;
+background: rgba(126, 208, 255, 0.5);
+padding: 0.5em 0.8em;
+outline: none;
+border-radius: 6px;
+width: 90%;
+} 
+.submit{
+color: #5497A7;
+border: none;
+background: rgb(84,151,167,0.1);
+border-radius: 6px;
+padding: 0em;
+margin: 0px;
+outline: none;
+width: 190px;
+height: 50px;
+cursor: pointer;
+font-size: 20px;
+font-family: Amatic SC;
+font-weight: bold;
+}
+.submit:hover{
+color: #A76854;
+border: none;
+background: rgba(167, 104, 84, 0.1);
+border-radius: 6px;
+padding: 0em 0em;
+margin: 0px;
+outline: none;
+width: 190px;
+height: 50px;
+font-size: 20px;
+font-family: Amatic SC;
+font-weight: bold;
+}
+.col-12-20 a {
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
+.col-12-20 p {
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 25px;
+text-align: center;
+fill: solid;
+color: #5497A7;
+font-family: Amatic SC;
+}
