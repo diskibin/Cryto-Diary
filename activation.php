@@ -11,16 +11,16 @@ include 'index.php';
             if(mysqli_num_rows($count) == 1) 
             {
                 mysqli_query($dbc,"UPDATE signup SET ok='1' WHERE mailkey='$mailkey'");
-                $msg="<center>Ваш аккаунт активирован</center>"; 
+                $msg="<br><div class='col-12-2'><center><p>Ваш аккаунт активирован</p></center></div>"; 
             }
             else
             {
-                $msg ="<br><div class='col-12-2'><center><p>Ваш аккаунт уже активирован, нет необходимости активировать его снова.</p></center></div>";
+                $msg ="<br><div class='col-12-2'><center><p>Ваш аккаунт уже активирован, нет необходимости активировать его снова</p></center></div>";
             }
         }
         else
         {
-            $msg ="<center>Неверный код активации.</center>";
+            $msg ="<br><div class='col-12-2'><center><p>Неверный код активации</p></center></div>";
         }
     }
 ?>

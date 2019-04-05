@@ -118,6 +118,7 @@ logout();
                     <br>
                     <p>Имеющиеся записи <?php if(empty($_COOKIE['email'])) {?> <?php } else { ?> пользователя <?php echo $_COOKIE['email']; ?> <?php } ?></p>
                     <?php if(empty($_COOKIE['email'])) {?> <?php } else { ?> 
+                    <center>
                     <div class="row justify-content-center">
                         <form method="POST"action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <button name="logout" class="submit">Выйти из аккаунта</button>
@@ -126,6 +127,7 @@ logout();
                         <button name="delete" class="submit">Удалить аккаунт</button>
                         </form>
                     </div>
+                    </center>
                     <?php } ?>
 				</div>
 			</div>
@@ -230,9 +232,6 @@ logout();
 
 		</div>
     </div>
-    
-	<br>
-    <br>
 
 	<div class="container">
 		<div class="row justify-content-center">

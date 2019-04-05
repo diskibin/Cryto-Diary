@@ -65,11 +65,7 @@ function registration(){
 				mysqli_close($dbc);
 				exit();
 
-			}
-			else {
-				
-			}
-			
+			}			
 		}
 	}
 	return $info_reg;
@@ -501,23 +497,11 @@ function sendemail($toemail, $subject, $message) {
 	$mail->Username = 'diskibin';
 	$mail->Password = 'Dimas2197';
 
-	// От кого
 	$mail->setFrom("diskibin@gmail.com", "CryptoDiary");       
-
-	// Кому
 	$mail->addAddress($toemail, $toemail); 
-
-	// Тема письма
 	$mail->Subject = $subject;
-
-	// Тело письма
 	$mail->msgHTML($message);
 
-	if( $mail->send() ){
-		echo 'Письмо отправлено';
-	}else{
-		echo 'Письмо не может быть отправлено. ';
-		echo 'Ошибка: ' . $mail->ErrorInfo;
-	}
+	$mail->send();
 }
 ?>

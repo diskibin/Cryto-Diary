@@ -294,16 +294,6 @@ vk();
     
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script language="javascript">
-	window.onload = function(e){ 
-		if(test == 1){
-			$("#myModal").modal('show');
-		}
-		if(test == 2){
-			$("#myModal2").modal('show');
-		}
-	}
-</script>
 </body>
 </html>
 

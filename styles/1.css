@@ -267,3 +267,6 @@ fill: solid;
 color: #5497A7;
 font-family: Amatic SC;
 }
+.close {
+margin: -5px 10px 0px 0px;
+}
