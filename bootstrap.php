@@ -35,7 +35,7 @@ function registration(){
 			$subject="Подтверждение электронной почты";
 			$body='Здраствуйте, <br/> <br/> Нам необходимо убедиться, что вы действительно хотите зарегестрироваться на нашем сервисе. Для этого вам необходимо подтвердить аккаунт, перейдя по ссылке ниже:<br/> <br/> 
 			<a href="'.$base_url.'/activation.php?mailkey='.$mailkey.'">'.$base_url.'/activation.php?mailkey='.$mailkey.'</a>';
-			mail($to,$subject,$body,'Content-type: text/html; charset=utf-8\r\n');
+			$sending = sendemail($to, $subject, $body);
 
 			$vklogin = $_COOKIE['user'];
 			$query = "SELECT * FROM `signup` WHERE email = '$email'";
@@ -54,12 +54,12 @@ function registration(){
 			$subject="Подтверждение электронной почты";
 			$body='Здраствуйте, <br/> <br/> Нам необходимо убедиться, что вы действительно хотите зарегестрироваться на нашем сервисе. Для этого вам необходимо подтвердить аккаунт, перейдя по ссылке ниже:<br/> <br/> 
 			<a href="'.$base_url.'/activation.php?mailkey='.$mailkey.'">'.$base_url.'/activation.php?mailkey='.$mailkey.'</a>';
-			mail($to,$subject,$body,'Content-type: text/html; charset=utf-8\r\n');
+			$sending = sendemail($to, $subject, $body);
 			
 			$query = "SELECT * FROM `signup` WHERE email = '$email'";
 			$data = mysqli_query($dbc, $query);
 			if(mysqli_num_rows($data) == 0) {
-				$query = "INSERT INTO `signup` (email, password, mailkey, ok, vk_uid) VALUES ('$email', SHA('$confirmation'), '$mailkey', '0', '0')";
+				$query ="INSERT INTO `signup` (email, password, mailkey, ok, vk_uid) VALUES ('$email', SHA('$confirmation'), '$mailkey', '0', '0')";
 				mysqli_query($dbc, $query);
 				header ('Location: complete.html');
 				mysqli_close($dbc);
@@ -167,8 +167,11 @@ function userdelete(){
 		$mail = $_COOKIE['email'];
 		$query ="DELETE FROM signup WHERE email = '$mail'";
 		$result = mysqli_query($dbc, $query);
-		logout();
-		header ('Location: index.php');
+		unset($_COOKIE['user_id']);
+		unset($_COOKIE['email']);
+		setcookie('user_id', '', -1, '/');
+		setcookie('email', '', -1, '/');
+		header('Location: index.php');
 		mysqli_close($dbc);
 		exit();
     }
@@ -388,7 +391,7 @@ function recpassload($id){
 			if(mysqli_num_rows($c) > 0){
 					$query1 = "SELECT crpassword FROM records WHERE id = '$id '";
 					$result1 = mysqli_query($dbc, $query1);
-					$data1 = mysqli_fetch_row($result1);;
+					$data1 = mysqli_fetch_row($result1);
 			}
 	}
 	return $data1[0];
@@ -479,6 +482,42 @@ function vksetcookies(){
 			$link = 'Ваш vk id: '.$_COOKIE['user'].'';
 			echo("<script type='text/javascript'>$('#vkreginfo').html('".$link."')</script>");
 			}
+	}
+}
+
+function sendemail($toemail, $subject, $message) {
+	date_default_timezone_set("Europe/Moscow"); // устанавливаем часовую зону
+	require "PHPMailer/PHPMailerAutoload.php"; // подключаем файл автозагрузки
+	$mail = new PHPMailer;
+	$mail->CharSet = 'UTF-8';
+
+	// Настройки SMTP
+	$mail->isSMTP();
+	$mail->SMTPAuth = true;
+	$mail->SMTPDebug = 1;
+
+	$mail->Host = 'ssl://smtp.gmail.com';
+	$mail->Port = 465;
+	$mail->Username = 'diskibin';
+	$mail->Password = 'Dimas2197';
+
+	// От кого
+	$mail->setFrom("diskibin@gmail.com", "CryptoDiary");       
+
+	// Кому
+	$mail->addAddress($toemail, $toemail); 
+
+	// Тема письма
+	$mail->Subject = $subject;
+
+	// Тело письма
+	$mail->msgHTML($message);
+
+	if( $mail->send() ){
+		echo 'Письмо отправлено';
+	}else{
+		echo 'Письмо не может быть отправлено. ';
+		echo 'Ошибка: ' . $mail->ErrorInfo;
 	}
 }
 ?>
