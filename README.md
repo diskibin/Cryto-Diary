@@ -1,6 +1,3 @@
-<snippet>
-  <content><![CDATA[
-
 # Cryto Diary
 
 [![Build Status](https://travis-ci.org/diskibin/Cryto-Diary.svg?branch=master)](https://travis-ci.org/diskibin/Cryto-Diary)
@@ -32,7 +29,3 @@ TODO: Write credits
 ## License
 
 TODO: Write license
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
