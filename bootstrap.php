@@ -65,11 +65,7 @@ function registration(){
 				mysqli_close($dbc);
 				exit();
 
-			}
-			else {
-				
-			}
-			
+			}			
 		}
 	}
 	return $info_reg;
