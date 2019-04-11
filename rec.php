@@ -1,6 +1,6 @@
 <?php   
 include 'bootstrap.php';
-edit();
+if(isset($_POST['otred'])) {edit();};
 ?>
 
 <html>

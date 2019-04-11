@@ -1,10 +1,10 @@
 <?php
 include 'bootstrap.php';
-userdelete();
-createrec();
-deleterec();
-vkset();
-logout();
+if(isset($_POST['delete'])) {userdelete();};
+if(isset($_POST['sipr'])) {createrec();};
+if(isset($_POST['del'])) {deleterec();};
+if(isset($_POST['vkconnect'])) {vkset();};
+if(isset($_POST['logout'])) {logout();};
 ?>
 
 
@@ -150,7 +150,7 @@ logout();
                         <tbody>
 
                         <?php
-                        createtable()
+                        createtable();
                         ?>
 
                         </tbody>
@@ -317,16 +317,15 @@ logout();
         }
     }
 
-    $(document).ready(function() 
-        { 
-            $("#notes").tablesorter({
-        headers: {  
-            1: { sorter: false }, 
-            2: { sorter: false },  
-            3: { sorter: false } 
-        } 
-    }); 
-});
+    $(document).ready(function() { 
+        $("#notes").tablesorter({
+            headers: {  
+                1: { sorter: false }, 
+                2: { sorter: false },  
+                3: { sorter: false } 
+            } 
+        }); 
+    });
     
     </script>
 

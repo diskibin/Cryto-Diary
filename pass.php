@@ -55,5 +55,5 @@
 
 <?php
 include 'bootstrap.php';
-passrestore();
+if(isset($_POST['submit'])) {passrestore();};
 ?>

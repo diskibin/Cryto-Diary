@@ -76,5 +76,5 @@
 
 <?php
 include 'bootstrap.php';
-passchange();
+if(isset($_POST['submit'])) {passchange();};
 ?>

@@ -1,9 +1,9 @@
 <?php
 include 'bootstrap.php';
-registration();
-login();
-logout();
-vk();
+if(isset($_POST['submit'])) {registration();};
+if(isset($_POST['submit1'])) {login();};
+if(isset($_POST['logout'])) {logout();};
+if(isset($_POST['vkvhod'])) {vk();};
 ?>
 
 <!DOCTYPE HTML>
